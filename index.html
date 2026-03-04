@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стратегия Иры: март–май 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+        :root {
+            --neon-pink: #ff007f;
+            --chrome: #e0e0e0;
+            --bg-dark: #0a0a0a;
+            --glass-bg: rgba(10, 10, 10, 0.85);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+
+        .highlight {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+
+        .section {
+            padding: 80px 20px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Hero / Biker Section */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--neon-pink);
+            border-radius: 0 10px 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--neon-pink);
+        }
+
+        /* Sunset / Prize Section */
+        .sunset-prize {
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .sunset-prize .container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--neon-pink);
+            box-shadow: 0 0 50px rgba(255, 0, 127, 0.3);
+        }
+
+        .total-money {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            color: var(--neon-pink);
+            margin: 40px 0;
+            text-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+        }
+
+        /* Roadmap Section */
+        .roadmap {
+            background-color: #050505;
+            background-image: radial-gradient(ellipse at 20% 50%, rgba(255, 0, 127, 0.05) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 20%, rgba(255, 0, 127, 0.03) 0%, transparent 50%);
+        }
+
+        .roadmap .container {
+            border: 1px solid rgba(255, 0, 127, 0.2);
+        }
+
+        .roadmap-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .roadmap-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 59px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--neon-pink), transparent);
+            opacity: 0.3;
+        }
+
+        .roadmap-date {
+            flex-shrink: 0;
+            width: 120px;
+            text-align: center;
+            background: rgba(255, 0, 127, 0.1);
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            border-radius: 10px;
+            padding: 15px 10px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: var(--neon-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.3;
+        }
+
+        .roadmap-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 20px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .roadmap-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .roadmap-content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.9rem;
+        }
+
+        .month-total {
+            display: inline-block;
+            background: rgba(255, 0, 127, 0.15);
+            border: 1px solid rgba(255, 0, 127, 0.4);
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--neon-pink);
+            margin-top: 8px;
+        }
+
+        .prize-breakdown {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .prize-month {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px 15px;
+        }
+
+        .prize-month .month-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .prize-month .month-amount {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 0, 127, 0.5), transparent);
+            margin: 40px 0;
+        }
+
+        /* ── BIKER ── */
+        .biker-figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeUp 1.2s ease 0.5s forwards;
+        }
+
+        .biker-caption {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: rgba(255,0,127,0.5);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── EXPERT BLOCK ── */
+        .expert-block {
+            border: 1px solid rgba(255,0,127,0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            background: rgba(255,0,127,0.03);
+        }
+
+        .expert-name {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--neon-pink);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .expert-quote {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .expert-action {
+            font-size: 0.85rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* ── WEEK PLAN ── */
+        .week {
+            margin-bottom: 32px;
+        }
+
+        .week-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--neon-pink);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .week-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .week-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.88rem;
+        }
+
+        .week-item .day {
+            flex-shrink: 0;
+            width: 80px;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            padding-top: 1px;
+        }
+
+        .week-item .action {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+
+        .week-item.key {
+            border-color: rgba(255,0,127,0.3);
+            background: rgba(255,0,127,0.05);
+        }
+
+        .week-item.key .day {
+            color: var(--neon-pink);
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2rem; }
+            .total-money { font-size: 1.8rem; }
+            .prize-breakdown { grid-template-columns: 1fr; }
+            .roadmap-item { flex-direction: column; gap: 15px; }
+            .roadmap-item::after { display: none; }
+            .roadmap-date { width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section hero">
+        <div class="container">
+            <h1>Стратегия: <span class="highlight">март–май 2026</span></h1>
+            <h3>+ пунктир на 2 года</h3>
+
+            <div class="card" style="margin-top: 40px;">
+                <h2>Позиционирование</h2>
+                <p><strong>Кто ты:</strong> Помогаю экспертам с большим опытом перестать молчать — с помощью AI и контента.</p>
+                <p><strong>Для кого:</strong> Эксперты 35+, предприниматели, спикеры, врачи, психологи — те, у кого есть что сказать, но нет времени и системы.</p>
+                <p><strong>Чем отличаешься:</strong> 10+ лет креативного директора + AI + контент-стратегия. Маркетолог + стратег + креативщик + знаток нейросетей в одном человеке. Такой комбы нет ни у Нейли, ни у Байрама, ни у Дениса.</p>
+                <p><strong>Манифест (Бартлетт):</strong> "Все AI-курсы учат инструментам. Инструменты — это 10%. 90% — умение упаковать то, что ты уже знаешь. Если ты не говоришь о себе — тебя не существует."</p>
+                <p><strong>Главный нарратив:</strong> "Ваши знания достойны лучшей упаковки. Я знаю, как это сделать."</p>
+            </div>
+
+            <div class="card" style="border-left-color: #ff007f; background: rgba(255,0,127,0.05);">
+                <h2>Продуктовая лестница (исправленная)</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 16px;">Хормози: между 5,500₽ и 19,900₽ — пустота. Люди падают в неё и уходят.</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="padding:12px 16px; border:1px solid #333; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                        <span>Карусели 2.0</span><strong class="highlight">5,500₽</strong>
+                    </div>
+                    <div style="padding:12px 16px; border:1px solid #ff007f; border-radius:8px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,0,127,0.08);">
+                        <span>AI-разбор за 90 минут <span style="font-size:0.75rem; color:rgba(255,255,255,0.4);">← НОВАЯ СТУПЕНЬ</span></span><strong class="highlight">9,900₽</strong>
+                    </div>
+                    <div style="padding:12px 16px; border:1px solid #333; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                        <span>Space Hub</span><strong class="highlight">19,900₽</strong>
+                    </div>
+                    <div style="padding:12px 16px; border:1px solid #333; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                        <span>Карусели 2.0 + Ира лично</span><strong class="highlight">35,000₽</strong>
+                    </div>
+                    <div style="padding:12px 16px; border:1px solid #ff007f; border-radius:8px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,0,127,0.08);">
+                        <span>Клуб AI-эксперт <span style="font-size:0.75rem; color:rgba(255,255,255,0.4);">← РЕКУРРЕНТ</span></span><strong class="highlight">2,900₽/мес</strong>
+                    </div>
+                    <div style="padding:12px 16px; border:1px solid #333; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                        <span>Цифровая упаковка (флагман)</span><strong class="highlight">100,000₽</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: #111;">
+        <div class="container">
+
+            <div class="card">
+                <h2 class="highlight">МАРТ — Запуск Каруселей 2.0</h2>
+
+                <div class="week">
+                    <div class="week-label">Неделя 1 // 3–9 марта — подготовка</div>
+                    <div class="week-items">
+                        <div class="week-item">
+                            <span class="day">Пн–Вт</span>
+                            <span class="action">3 поста в TG: "почему делаю Карусели 2.0" + "что внутри" + "кто в листе — вот что вас ждёт". Письмо 50 людям в предзаписи: цена 4,500₽ до 14 марта.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Ср–Чт</span>
+                            <span class="action">Кейсы — экстренный сбор. Написать каждому студенту Space Hub лично: "Что изменилось? Даже маленькое." 3 вопроса, не больше. Цель: 5 кейсов до 15 марта.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Пт–Вс</span>
+                            <span class="action">Коллаборации — первый шаг. Список 10 человек (коучи, психологи, HR, маркетологи). Написать 3 из них: "Давай совместный эфир — ты про X, я про AI-упаковку."</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week">
+                    <div class="week-label">Неделя 2 // 10–14 марта — финальный разогрев</div>
+                    <div class="week-items">
+                        <div class="week-item">
+                            <span class="day">TG</span>
+                            <span class="action">2 поста с кейсами (даже маленькими — публикуй). Напоминание: "завтра цена растёт".</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Instagram</span>
+                            <span class="action">Карусель "5 ошибок экспертов при создании контента с AI" — демо продукта в формате контента.</span>
+                        </div>
+                        <div class="week-item key">
+                            <span class="day">VIP анонс</span>
+                            <span class="action">В TG: "15 марта открываю 2 места на личную работу — 35,000₽, результат за один день."</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week">
+                    <div class="week-label">Неделя 3 // 15–21 марта — ЗАПУСК</div>
+                    <div class="week-items">
+                        <div class="week-item key">
+                            <span class="day">15 марта</span>
+                            <span class="action">Открытие продаж: 5,500₽ + 2 VIP-места по 35,000₽. Пост: личная история + что получат + ссылка.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">16–21</span>
+                            <span class="action">Instagram stories каждый день: покупки, реакции, процесс. Первые уроки начались — собирай скриншоты и цитаты.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="week">
+                    <div class="week-label">Неделя 4 // 22–31 марта — удержание + следующий шаг</div>
+                    <div class="week-items">
+                        <div class="week-item">
+                            <span class="day">Контент</span>
+                            <span class="action">Реакции студентов, первые результаты, за кулисами курса.</span>
+                        </div>
+                        <div class="week-item key">
+                            <span class="day">Анонс</span>
+                            <span class="action">Клуб AI-эксперт: "скоро открою закрытое сообщество, первые 30 мест по специальной цене."</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Коллаб</span>
+                            <span class="action">Провести первый совместный эфир (если договорилась на неделе 1).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                    <p style="margin:0 0 8px; font-size:0.8rem; color:rgba(255,255,255,0.4); letter-spacing:0.2em; text-transform:uppercase;">Деньги марта</p>
+                    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                        <span>50 × 4,500₽ = <strong class="highlight">225,000₽</strong></span>
+                        <span>15 × 5,500₽ = <strong class="highlight">82,500₽</strong></span>
+                        <span>2 × 35,000₽ = <strong class="highlight">70,000₽</strong></span>
+                    </div>
+                    <div style="margin-top:10px; font-size:1.1rem; font-weight:900;">Итого: <span class="highlight">~377,500₽</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="highlight">АПРЕЛЬ — Правильная аудитория + Клуб + Коллаборации</h2>
+
+                <div class="week">
+                    <div class="week-label">Главные приоритеты</div>
+                    <div class="week-items">
+                        <div class="week-item key">
+                            <span class="day">Клуб</span>
+                            <span class="action">Запуск "AI-эксперт" — конец апреля. Первые 30 мест по 1,900₽/мес (основатели). Потом 2,900₽/мес. Что внутри: 2 созвона/мес + закрытый чат + мини-урок каждые 2 недели + архив.</span>
+                        </div>
+                        <div class="week-item key">
+                            <span class="day">AI-разбор</span>
+                            <span class="action">Новый продукт 9,900₽ — 90 минут лично. Ира разбирает контент-стратегию + настраивает 1–2 агента под нишу. 4–6 мест в месяц. Быстрые деньги + быстрые кейсы.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Кейсы</span>
+                            <span class="action">К 15 апреля — 5 кейсов опубликованы. К 1 мая — 10. Без этого флагман не продать.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Коллабы</span>
+                            <span class="action">2 совместных эфира в апреле. Один уже договорён в марте. Каждый эфир = 200–300 новых подписчиков.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Рассылка</span>
+                            <span class="action">Первый выпуск AI reХАБ. Тема: "Как я зарабатываю на AI-контенте и что реально работает." Воронка в клуб.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                    <p style="margin:0 0 8px; font-size:0.8rem; color:rgba(255,255,255,0.4); letter-spacing:0.2em; text-transform:uppercase;">Деньги апреля</p>
+                    <div style="display:flex; gap:16px; flex-wrap:wrap; font-size:0.9rem;">
+                        <span>AI-разборы 4 × 9,900₽ = <strong class="highlight">39,600₽</strong></span>
+                        <span>Клуб 30 × 1,900₽ = <strong class="highlight">57,000₽</strong></span>
+                        <span>Карусели новые = <strong class="highlight">55,000₽</strong></span>
+                    </div>
+                    <p style="margin:6px 0 0; font-size:0.75rem; color:rgba(255,255,255,0.3);">Апрель — переходный месяц. Строим фундамент для майского флагмана.</p>
+                    <div style="margin-top:10px; font-size:1.1rem; font-weight:900;">Итого: <span class="highlight">~151,600₽</span> + Space Hub поток</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="highlight">МАЙ — Флагман + Система</h2>
+
+                <div class="week">
+                    <div class="week-label">Главные приоритеты</div>
+                    <div class="week-items">
+                        <div class="week-item key">
+                            <span class="day">Флагман</span>
+                            <span class="action">"Цифровая упаковка" — 100,000₽. Групповая программа 6–8 недель, макс. 15 человек. Предпродажа в конце апреля для клуба и рассылки по 80,000₽. Нужно: 10 кейсов + клуб + рассылка.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Карусели 2.0</span>
+                            <span class="action">Поток 2 — 5,500₽. 30 человек. Студенты потока 1 уже дали первые результаты — это контент для продажи.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Клуб</span>
+                            <span class="action">Первый полный месяц. Оцениваешь retention, корректируешь формат. Цель: 50+ участников.</span>
+                        </div>
+                        <div class="week-item">
+                            <span class="day">Корпорат</span>
+                            <span class="action">Если есть хоть один лид — закрывай. Минимум 150,000₽ за воркшоп.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                    <p style="margin:0 0 8px; font-size:0.8rem; color:rgba(255,255,255,0.4); letter-spacing:0.2em; text-transform:uppercase;">Деньги мая</p>
+                    <div style="display:flex; gap:16px; flex-wrap:wrap; font-size:0.9rem;">
+                        <span>Флагман 10 × 100,000₽ = <strong class="highlight">1,000,000₽</strong></span>
+                        <span>Карусели 30 × 5,500₽ = <strong class="highlight">165,000₽</strong></span>
+                        <span>Клуб 50 × 2,900₽ = <strong class="highlight">145,000₽</strong></span>
+                        <span>Корпорат = <strong class="highlight">150,000₽</strong></span>
+                    </div>
+                    <div style="margin-top:10px; font-size:1.1rem; font-weight:900;">Итого: <span class="highlight">~1,460,000₽</span></div>
+                </div>
+            </div>
+
+            <!-- EXPERT CRITIQUES -->
+            <h2 style="margin-top:48px; margin-bottom:24px;">Что сказали эксперты</h2>
+
+            <div class="expert-block">
+                <div class="expert-name">Дороничев // Продукт и рост</div>
+                <div class="expert-quote">"Дырявое ведро. Каждый продукт — разовая транзакция. Купил, ушёл. Нет ни одного механизма удержания. Ты льёшь воду сверху, но снизу всё вытекает."</div>
+                <div class="expert-action">→ Встроить кейсы в продукт принудительно. Клуб с рекуррентным платежом. Коллаборации — это не рост, это выживание при маленькой базе.</div>
+            </div>
+
+            <div class="expert-block">
+                <div class="expert-name">Бартлетт // Личный бренд</div>
+                <div class="expert-quote">"У тебя есть продукт. У тебя нет бренда. Позиционирование — это описание услуги, не точка зрения на мир. Когда станешь медиа — продажи станут побочным эффектом."</div>
+                <div class="expert-action">→ Манифест: "Все учат инструментам. Инструменты — 10%. 90% — упаковать то, что ты уже знаешь." Взять 3 студентов Space Hub, помочь им лично, задокументировать — это первые кейсы и первые коллаборации.</div>
+            </div>
+
+            <div class="expert-block">
+                <div class="expert-name">Хормози // Деньги и офферы</div>
+                <div class="expert-quote">"16₽ с подписчика в месяц — это катастрофа. Нормальный показатель для твоей ниши — 100–200₽. Ты оставляешь на столе 1–3 миллиона рублей ежемесячно."</div>
+                <div class="expert-action">→ VIP-день упаковки 25,000₽ — 10 человек до 15 марта = 250,000₽ + 10 кейсов. Починить лестницу: добавить ступень 9,900₽. Клуб в апреле: 100 человек × 2,900₽ = 290,000₽ стабильно каждый месяц.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section sunset-prize">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 1.2rem; color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 4px;">МАРТ + АПРЕЛЬ + МАЙ</h2>
+            <h1 style="text-align: center; font-size: 2rem; background: linear-gradient(to right, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0;">Три месяца. Один результат.</h1>
+
+            <div class="prize-breakdown">
+                <div class="prize-month">
+                    <div class="month-name">Март</div>
+                    <div class="month-amount">377,500₽</div>
+                    <div class="month-total">Карусели 2.0</div>
+                </div>
+                <div class="prize-month">
+                    <div class="month-name">Апрель</div>
+                    <div class="month-amount">151,600₽+</div>
+                    <div class="month-total">Клуб + AI-разборы</div>
+                </div>
+                <div class="prize-month">
+                    <div class="month-name">Май</div>
+                    <div class="month-amount">1,460,000₽</div>
+                    <div class="month-total">Флагман + Клуб</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <p style="text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;">Итого за квартал</p>
+            <div class="total-money">~1,989,100 ₽</div>
+
+            <p style="text-align: center; color: rgba(255,255,255,0.35); font-size: 0.8rem; max-width: 500px; margin: 0 auto;">
+                Апрель — переходный. Строишь фундамент: кейсы, клуб, коллаборации. Май взрывается флагманом.
+            </p>
+        </div>
+    </div>
+
+    <div class="section roadmap">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 10px;">Пунктир на <span class="highlight">2 года</span></h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 50px;">Куда всё это ведёт</p>
+
+            <div class="roadmap-item">
+                <div class="roadmap-date">2026<br>Q2–Q3</div>
+                <div class="roadmap-content">
+                    <h3>Масштаб</h3>
+                    <p>Space Hub потоки каждые 6 недель. Коллаборации как основной канал роста — не реклама, а партнёрства с экспертами. Выход на стабильные 1M+/мес. Первые кейсы "Цифровой упаковки" становятся контентом, который продаёт сам.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-date">2026<br>Q4</div>
+                <div class="roadmap-content">
+                    <h3>Флагман как основа</h3>
+                    <p>"Цифровая упаковка" — главный продукт. Не курс, а трансформация под ключ. Первый ассистент или подрядчик в команде. Ты перестаёшь делать всё руками — начинаешь строить систему, которая работает без тебя.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-date">2027<br>Q1–Q2</div>
+                <div class="roadmap-content">
+                    <h3>Агентство / Платформа</h3>
+                    <p>Работа с топ-экспертами на долгосрочных контрактах. Команда из 3–5 человек. Возможно — собственный инструмент или AI-продукт для экспертов. Ты больше не продаёшь курсы — ты строишь инфраструктуру для тех, кто хочет говорить громко.</p>
+                </div>
+            </div>
+
+            <div class="roadmap-item">
+                <div class="roadmap-date">2027<br>Q3–Q4</div>
+                <div class="roadmap-content">
+                    <h3>Выход на международный рынок</h3>
+                    <p>Контент на английском. Коллаборации с зарубежными экспертами. Продукты в долларах. Позиционирование: "AI-стратег для экспертов, которые хотят быть услышаны" — работает в любой стране.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <p style="text-align: center; color: rgba(255,255,255,0.3); font-size: 0.8rem; max-width: 600px; margin: 0 auto; font-style: italic;">
+                Пунктир — не план. Это направление. Каждый квартал будет корректировать детали. Главное — не сворачивать с вектора.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
